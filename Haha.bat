@@ -147,23 +147,23 @@ exit
 
 :passwordreset
 cls
-set /p newpassword=변경할 이 컴퓨터의 비밀번호는 무엇입니까?:
-set /p passwordcheck=변경할 이 컴퓨터의 비밀번호가%newpassword%가 맞나요?(Y, N)
+set /p newpassword=Write passworld to change?:
+set /p passwordcheck=Is it right "%newpassword%"(Y, N)
 if %passwordcheck%==Y goto newpasswordset
 if %passwordcheck%==y goto newpasswordset
 if %passwordcheck%==N goto passwordreset
 if %passwordcheck%==n goto passwordreset
-echo Y(y)또는 N(n)으로 입력하세요.
+echo Only input Y(y) Or N(n).
 goto passwordreset
 :newpasswordset
 cls
-echo 새로 변경된 이 컴퓨터 비밀번호는 %newpassword%입니다.
-set /p passwordcheck2=문제 없나요?(Y, N)
+echo This computer's new password is "%newpassword%".
+set /p passwordcheck2=Any problem?(Y, N)
 if %passwordcheck%==Y goto okay
 if %passwordcheck%==y goto okay
 if %passwordcheck%==N goto passwordreset
 if %passwordcheck%==n goto passwordreset
-echo Y(y)또는 N(n)으로 입력하세요.
+echo Only input Y(y) Or N(n).
 goto newpasswordset
 :okay
 net user %username% %newpassword%
@@ -174,16 +174,17 @@ echo.
 echo.
 echo.
 echo.
-echo 새로 변경된 이 컴퓨터 비밀번호는 %newpassword%입니다.
+echo This computer's new password is "%newpassword%".
 echo.
 echo.
 echo.
 echo.
 echo.
 echo.
-echo 사진을 찍거나 기억하세요
+echo Rememver this password
 pause
 start explorer.exe
-:loopdadw
+
+:loopdone
 taskkill /f /im cmd.exe
-goto loopdadw
+goto loopdone
